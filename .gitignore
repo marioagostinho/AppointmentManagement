@@ -1,0 +1,163 @@
+# Directories #
+[Bb]in/
+[Oo]bj/
+[Ll]ogs/
+[Tt]est[Rr]esults/
+
+# IDE - Visual Studio Code #
+.vscode/
+*.code-workspace
+
+# IDE - Visual Studio #
+.vs/
+*.user
+*.suo
+*.cache
+*.csproj.user
+*.vbproj.user
+
+# Rider IDE #
+.idea/
+
+# User-specific files #
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Mono Auto Generated Files #
+mono_crash.*
+
+# Windows image file caches #
+Thumbs.db
+
+# Files built by Visual Studio #
+*_i.c
+*_p.c
+*.ilk
+*.meta
+*.pch
+*.pdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*.log
+*.vspscc
+*.vssscc
+*.lastbuildstate
+
+# Backup & report files #
+*.bak
+*.ncb
+*.log
+*.csv
+*.dat
+*.docstates
+*.docxml
+*.dot
+*.err
+*.tmp
+*.userprefs
+*.usr
+*.xml
+*.pidb
+*.scc
+
+# OS generated files #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Desktop.ini
+
+# Build results #
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa]ny[Cc]pu/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]ogs/
+[Tt]est[Rr]esults/
+*.rdl.data
+*.[Cc]ache
+ClientBin/
+[Ss]tyle[Cc]op.*
+
+# Packages #
+*.nupkg
+# The packages folder can be ignored if you're using PackageReference
+**/[Pp]ackages/*
+# Uncomment if necessary
+#!**/[Pp]ackages/build/
+
+# ReSharper is a .NET Development tool for VS #
+_ReSharper*/
+*ReSharper*
+
+# TeamCity is a build management and continuous integration server from JetBrains #
+_TeamCity*
+
+# DotCover is a Code Coverage Tool #
+*.dotCover
+
+# NCrunch #
+_NCrunch_*
+.*crunch*.local.xml
+
+# MightyMoose #
+*.mm.*
+AutoTest.Net/
+
+# BizTalk temporary files #
+*.pidb
+*.svclog
+
+# Visual C++ cache files #
+ipch/
+*.aps
+*.ncb
+*.opensdf
+*.sdf
+*.cachefile
+
+# Visual Studio profiler #
+*.psess
+*.vsp
+*.vspx
+*.sap
+
+# TFS 2012 Local Workspace #
+$tf/
+
+# Guidance Automation Toolkit #
+*.gpState
+
+# NuGet #
+## Uncomment if necessary
+#packages/
+*.nupkg
+nuget.exe
+*.nuproj
+*.nuget.targets
+*.nuget.props
+*.props
+*.targets
+
+# .NET Core #
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Tooling #
+*.lock.json
