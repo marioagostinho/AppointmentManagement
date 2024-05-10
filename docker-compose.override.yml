@@ -1,0 +1,20 @@
+services:
+    team.db:
+        container_name: team.db
+        environment:
+            SA_PASSWORD: "Test1234"
+            ACCEPT_EULA: "Y"
+        restart: always
+        ports:
+            - "1433:1433"
+
+    team.api:
+        container_name: team.api
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+            - ASPNETCORE_URLS=http://*:9000
+            - "ConnectionStrings__TeamConnectionString=Server=team.db;Database=TeamDb;User Id=sa;Password=Test1234;Encrypt=False;"
+        depends_on:
+            - team.db
+        ports:
+            - "9000:80"

@@ -1,0 +1,12 @@
+services:
+    team.db:
+        image: mcr.microsoft.com/mssql/server:2019-latest
+
+    team.api:
+        image: ${DOCKER_REGISTRY-}team.api
+        build:
+            context: .
+            dockerfile: Services/Team/Team.API/Dockerfile
+
+volumes:
+    sql_data_volume:
