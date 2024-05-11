@@ -21,12 +21,14 @@ builder.Services.AddApiVersioning(options =>
 });
 
 // CORS
+/*
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("all", builder => builder.AllowAnyOrigin()
     .AllowAnyHeader()
     .AllowAnyMethod());
 });
+*/
 
 builder.Services.AddHttpContextAccessor();
 
@@ -43,6 +45,7 @@ builder.WebHost.UseUrls("http://*:80");
 
 var app = builder.Build();
 
+// Development
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
@@ -59,11 +62,11 @@ if (app.Environment.IsDevelopment())
     }
 }
 
-app.UseCors("all");
+// CORS
+//app.UseCors("all");
 
+// Endpoints
 app.UseRouting();
-app.UseAuthorization();
-
 app.UseEndpoints(endpoints =>
 {
     _ = endpoints.MapControllers();

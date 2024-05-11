@@ -10,7 +10,7 @@ COPY ["Services/Appointment/Appointment.API/Appointment.API.csproj", "Services/A
 COPY ["Services/Appointment/Appointment.Application/Appointment.Application.csproj", "Services/Appointment/Appointment.Application/"]
 COPY ["Services/Appointment/Appointment.Domain/Appointment.Domain.csproj", "Services/Appointment/Appointment.Domain/"]
 COPY ["Services/Appointment/Appointment.Persistence/Appointment.Persistence.csproj", "Services/Appointment/Appointment.Persistence/"]
-RUN dotnet restore "./Services/Appointment/Appointment.API/./Appointment.API.csproj"
+RUN dotnet restore "./Services/Appointment/Appointment.API/Appointment.API.csproj"
 COPY . .
 WORKDIR "/src/Services/Appointment/Appointment.API"
 RUN dotnet build "Appointment.API.csproj" -c $BUILD_CONFIGURATION -o /app/build

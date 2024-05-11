@@ -17,5 +17,11 @@ services:
             context: .
             dockerfile: Services/Appointment/Appointment.API/Dockerfile
 
+    ocelotapigw:
+        image: ${DOCKER_REGISTRY-}ocelotapigw
+        build:
+            context: .
+            dockerfile: ApiGateways/Ocelot.ApiGateway/Dockerfile
+
 volumes:
     sql_data_volume:

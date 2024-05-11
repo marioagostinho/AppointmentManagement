@@ -7,7 +7,7 @@ using Team.Persistence.DatabaseContext;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//Custon services
+// Custom services
 builder.Services.AddApplicationServices();
 builder.Services.AddPersistenceServices(builder.Configuration);
 
@@ -21,12 +21,14 @@ builder.Services.AddApiVersioning(options =>
 });
 
 // CORS
+/*
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("all", builder => builder.AllowAnyOrigin()
     .AllowAnyHeader()
     .AllowAnyMethod());
 });
+*/
 
 builder.Services.AddHttpContextAccessor();
 
@@ -58,11 +60,10 @@ if (app.Environment.IsDevelopment())
     }
 }
 
-app.UseCors("all");
+//app.UseCors("all");
 
+// Endpoints
 app.UseRouting();
-app.UseAuthorization();
-
 app.UseEndpoints(endpoints =>
 {
     _ = endpoints.MapControllers();

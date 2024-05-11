@@ -35,6 +35,16 @@ services:
             - ASPNETCORE_URLS=http://*:9001
             - "ConnectionStrings__AppointmentConnectionString=Server=appointment.db;Database=AppointmentDb;User Id=sa;Password=Test1234;Encrypt=False;"
         depends_on:
-            - team.db
+            - appointment.db
         ports:
             - "9001:80"
+
+    ocelotapigw:
+        container_name: ocelotapigw
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+        depends_on:
+            - team.api
+            - appointment.api
+        ports:
+            - "9010:80"

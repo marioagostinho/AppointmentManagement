@@ -5,7 +5,7 @@ VisualStudioVersion = 17.8.34408.163
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{25029880-EE39-4292-9C91-3A9C75255AD5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Team", "Services\Team", "{02BBE79C-9D3A-4647-8C38-E5AE4CFA2B0C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Team", "Team", "{02BBE79C-9D3A-4647-8C38-E5AE4CFA2B0C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Team.Application", "Services\Team\Team.Application\Team.Application.csproj", "{AEB22414-8DFA-441D-B665-2EF2F39E3030}"
 EndProject
@@ -15,15 +15,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Team.Persistence", "Service
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Team.API", "Services\Team\Team.API\Team.API.csproj", "{2BE9AF3C-F392-4358-A213-342D5E03055F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Appointment", "Services\Appointment", "{7EB71C99-5CED-4F3E-A0B6-C1CD32CB0562}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Appointment", "Appointment", "{7EB71C99-5CED-4F3E-A0B6-C1CD32CB0562}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appointment.Domain", "Services\Appointment\Appointment.Domain\Appointment.Domain.csproj", "{D5E93DF9-64A3-4CB4-8496-7D2A2CF7C4F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Appointment.Domain", "Services\Appointment\Appointment.Domain\Appointment.Domain.csproj", "{D5E93DF9-64A3-4CB4-8496-7D2A2CF7C4F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appointment.Persistence", "Services\Appointment\Appointment.Persistence\Appointment.Persistence.csproj", "{7EF7E09B-8105-4766-80A3-6D8C586BBBFC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Appointment.Persistence", "Services\Appointment\Appointment.Persistence\Appointment.Persistence.csproj", "{7EF7E09B-8105-4766-80A3-6D8C586BBBFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appointment.Application", "Services\Appointment\Appointment.Application\Appointment.Application.csproj", "{FA78956E-5BBF-447F-900B-A6591F21BF65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Appointment.Application", "Services\Appointment\Appointment.Application\Appointment.Application.csproj", "{FA78956E-5BBF-447F-900B-A6591F21BF65}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appointment.API", "Services\Appointment\Appointment.API\Appointment.API.csproj", "{0CBF138A-D101-49CD-AA08-5420940423F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Appointment.API", "Services\Appointment\Appointment.API\Appointment.API.csproj", "{0CBF138A-D101-49CD-AA08-5420940423F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateways", "ApiGateways", "{C18EDCBD-EF57-41BE-A509-C329A9578176}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ocelot.ApiGateway", "ApiGateways\Ocelot.ApiGateway\Ocelot.ApiGateway.csproj", "{F532D1D0-DB61-4C90-A260-79228445ADE4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +67,10 @@ Global
 		{0CBF138A-D101-49CD-AA08-5420940423F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CBF138A-D101-49CD-AA08-5420940423F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CBF138A-D101-49CD-AA08-5420940423F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F532D1D0-DB61-4C90-A260-79228445ADE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F532D1D0-DB61-4C90-A260-79228445ADE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F532D1D0-DB61-4C90-A260-79228445ADE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F532D1D0-DB61-4C90-A260-79228445ADE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,6 +86,7 @@ Global
 		{7EF7E09B-8105-4766-80A3-6D8C586BBBFC} = {7EB71C99-5CED-4F3E-A0B6-C1CD32CB0562}
 		{FA78956E-5BBF-447F-900B-A6591F21BF65} = {7EB71C99-5CED-4F3E-A0B6-C1CD32CB0562}
 		{0CBF138A-D101-49CD-AA08-5420940423F6} = {7EB71C99-5CED-4F3E-A0B6-C1CD32CB0562}
+		{F532D1D0-DB61-4C90-A260-79228445ADE4} = {C18EDCBD-EF57-41BE-A509-C329A9578176}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D08AC09A-90F9-4738-B385-41BFE1BE106D}
