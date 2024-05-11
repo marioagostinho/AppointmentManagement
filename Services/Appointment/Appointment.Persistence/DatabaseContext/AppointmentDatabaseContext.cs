@@ -1,22 +1,20 @@
-﻿using Entities = Team.Domain.Entities;
+﻿using Entities = Appointment.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Team.Persistence.DatabaseContext
+namespace Appointment.Persistence.DatabaseContext
 {
-    public class TeamDatabaseContext : DbContext
+    public class AppointmentDatabaseContext : DbContext
     {
-        public TeamDatabaseContext(DbContextOptions<TeamDatabaseContext> options) : base(options)
+        public AppointmentDatabaseContext(DbContextOptions<AppointmentDatabaseContext> options) : base(options)
         {
             Database.Migrate();
         }
 
-        public DbSet<Entities.OpeningTimeSlot> OpeningTimeSlots { get; set; }
-        public DbSet<Entities.OpeningHours> OpeningHours { get; set; }
-        public DbSet<Entities.Team> Teams { get; set; }
+        public DbSet<Entities.Appointment> Appointments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(TeamDatabaseContext).Assembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppointmentDatabaseContext).Assembly);
             base.OnModelCreating(modelBuilder);
         }
 

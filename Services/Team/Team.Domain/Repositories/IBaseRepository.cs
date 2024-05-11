@@ -1,5 +1,4 @@
-﻿using System;
-using Team.Domain.Entities;
+﻿using Team.Domain.Entities;
 
 namespace Team.Domain.Repositories
 {

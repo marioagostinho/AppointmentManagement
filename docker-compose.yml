@@ -2,11 +2,20 @@ services:
     team.db:
         image: mcr.microsoft.com/mssql/server:2019-latest
 
+    appointment.db:
+        image: mcr.microsoft.com/mssql/server:2019-latest
+
     team.api:
         image: ${DOCKER_REGISTRY-}team.api
         build:
             context: .
             dockerfile: Services/Team/Team.API/Dockerfile
+
+    appointment.api:
+        image: ${DOCKER_REGISTRY-}appointment.api
+        build:
+            context: .
+            dockerfile: Services/Appointment/Appointment.API/Dockerfile
 
 volumes:
     sql_data_volume:
