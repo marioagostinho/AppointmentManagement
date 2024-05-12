@@ -1,4 +1,11 @@
 services:
+    rabbitmq:
+        container_name: rabbitmq
+        restart: always
+        ports:
+            - "5672:5672"
+            - "15672:15672"
+
     team.db:
         container_name: team.db
         environment:
@@ -23,8 +30,10 @@ services:
             - ASPNETCORE_ENVIRONMENT=Development
             - ASPNETCORE_URLS=http://*:9000
             - "ConnectionStrings__TeamConnectionString=Server=team.db;Database=TeamDb;User Id=sa;Password=Test1234;Encrypt=False;"
+            - "EventBusSettings__HostAddress=amqp://guest:guest@rabbitmq:5672"
         depends_on:
             - team.db
+            - rabbitmq
         ports:
             - "9000:80"
 
@@ -34,8 +43,10 @@ services:
             - ASPNETCORE_ENVIRONMENT=Development
             - ASPNETCORE_URLS=http://*:9001
             - "ConnectionStrings__AppointmentConnectionString=Server=appointment.db;Database=AppointmentDb;User Id=sa;Password=Test1234;Encrypt=False;"
+            - "EventBusSettings__HostAddress=amqp://guest:guest@rabbitmq:5672"
         depends_on:
             - appointment.db
+            - rabbitmq
         ports:
             - "9001:80"
 

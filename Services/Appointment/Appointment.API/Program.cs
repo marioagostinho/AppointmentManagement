@@ -8,7 +8,7 @@ using Appointment.Persistence.DatabaseContext;
 var builder = WebApplication.CreateBuilder(args);
 
 // Custom services
-builder.Services.AddApplicationServices();
+builder.Services.AddApplicationServices(builder.Configuration);
 builder.Services.AddPersistenceServices(builder.Configuration);
 
 // API

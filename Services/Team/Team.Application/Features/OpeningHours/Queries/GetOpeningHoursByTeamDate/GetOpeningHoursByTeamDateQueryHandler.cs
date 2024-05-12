@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using EventBus.Messages.Events;
+using MassTransit;
 using MediatR;
 using Team.Application.Dtos;
 using Team.Domain.Enums;
@@ -9,12 +11,15 @@ namespace Team.Application.Features.OpeningHours.Queries.GetOpeningHoursByTeamDa
     public class GetOpeningHoursByTeamDateQueryHandler : IRequestHandler<GetOpeningHoursByTeamDateQuery ,IReadOnlyList<OpeningHoursDto>>
     {
         private readonly IMapper _mapper;
+        private readonly IRequestClient<AppointmentRequestEvent> _requestClient;
         private readonly IOpeningHoursRepository _openingHoursRepository;
         private readonly ITeamRepository _teamRepository;
 
-        public GetOpeningHoursByTeamDateQueryHandler(IMapper mapper, IOpeningHoursRepository openingHoursRepository, ITeamRepository teamRepository)
+        public GetOpeningHoursByTeamDateQueryHandler(IMapper mapper, IRequestClient<AppointmentRequestEvent> requestClient,
+            IOpeningHoursRepository openingHoursRepository, ITeamRepository teamRepository)
         {
             _mapper = mapper;
+            _requestClient = requestClient;
             _openingHoursRepository = openingHoursRepository;
             _teamRepository = teamRepository;
         }
@@ -42,6 +47,16 @@ namespace Team.Application.Features.OpeningHours.Queries.GetOpeningHoursByTeamDa
             // Get opening hours by day of the week
             var openingHoursByDay = openingHours
                 .Where(p => p.DayOfWeek == dayOfWeek)
+                .ToList();
+
+            var messageResponse = await _requestClient.GetResponse<AppointmentResponseBatchEvent>(new AppointmentRequestEvent
+            {
+                TeamId = request.TeamId,
+                Date = request.Date
+            });
+
+            List<DateTime> dates = messageResponse.Message.Appointments
+                .Select(p => p.StartDateTime)
                 .ToList();
 
             var result = _mapper.Map<IReadOnlyList<OpeningHoursDto>>(openingHoursByDay);

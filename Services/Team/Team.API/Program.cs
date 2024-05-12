@@ -1,3 +1,4 @@
+using MassTransit;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
@@ -8,7 +9,7 @@ using Team.Persistence.DatabaseContext;
 var builder = WebApplication.CreateBuilder(args);
 
 // Custom services
-builder.Services.AddApplicationServices();
+builder.Services.AddApplicationServices(builder.Configuration);
 builder.Services.AddPersistenceServices(builder.Configuration);
 
 // API

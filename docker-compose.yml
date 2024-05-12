@@ -1,4 +1,7 @@
 services:
+    rabbitmq:
+        image: rabbitmq:3-management-alpine
+
     team.db:
         image: mcr.microsoft.com/mssql/server:2019-latest
 
