@@ -26,7 +26,7 @@ namespace Team.API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<OpeningTimeSlotDto>> Get()
+        public async Task<ActionResult<IReadOnlyList<OpeningTimeSlotDto>>> Get()
         {
             var openingTimeSlot = await _mediator.Send(new GetOpeningTimeSlotsQuery());
             return Ok(openingTimeSlot);

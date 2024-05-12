@@ -26,7 +26,7 @@ namespace Team.API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<TeamDto>> Get()
+        public async Task<ActionResult<IReadOnlyList<TeamDto>>> Get()
         {
             var teams = await _mediator.Send(new GetTeamsQuery());
             return Ok(teams);

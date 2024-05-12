@@ -26,7 +26,7 @@ namespace Appointment.API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<AppointmentDto>> Get()
+        public async Task<ActionResult<IReadOnlyList<AppointmentDto>>> Get()
         {
             var appointments = await _mediator.Send(new GetAppointmentsQuery());
             return Ok(appointments);
