@@ -1,13 +1,13 @@
 ﻿using FluentValidation;
 using Team.Domain.Repositories;
 
-namespace Team.Application.Features.OpeningHours.Queries.GetOpeningHoursByTeamDate
+namespace Team.Application.Features.OpeningTimeSlot.Queries.GetOpeningTimeSlotsByTeamAndDate
 {
-    public class GetOpeningHoursByTeamDateQueryValidator : AbstractValidator<GetOpeningHoursByTeamDateQuery>
+    public class GetOpeningTimeSlotsByTeamAndDateQueryValidator : AbstractValidator<GetOpeningTimeSlotsByTeamAndDateQuery>
     {
         private readonly ITeamRepository _teamRepository;
 
-        public GetOpeningHoursByTeamDateQueryValidator(ITeamRepository teamRepository)
+        public GetOpeningTimeSlotsByTeamAndDateQueryValidator(ITeamRepository teamRepository)
         {
             _teamRepository = teamRepository;
 

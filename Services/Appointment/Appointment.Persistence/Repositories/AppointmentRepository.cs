@@ -1,5 +1,6 @@
 ﻿using Appointment.Domain.Repositories;
 using Appointment.Persistence.DatabaseContext;
+using Microsoft.EntityFrameworkCore;
 using Entities = Appointment.Domain.Entities;
 
 namespace Appointment.Persistence.Repositories
@@ -8,6 +9,14 @@ namespace Appointment.Persistence.Repositories
     {
         public AppointmentRepository(AppointmentDatabaseContext context) : base(context)
         {
+        }
+
+        public async Task<IReadOnlyList<Entities.Appointment>> GetByTeamIdAndDateAsync(Guid teamId, DateTime date)
+        {
+            return await _context.Set<Entities.Appointment>()
+                .Where(p => p.TeamId == teamId && p.StartDateTime == date)
+                .AsNoTracking()
+                .ToListAsync();
         }
     }
 }

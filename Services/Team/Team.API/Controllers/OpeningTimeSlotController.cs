@@ -6,6 +6,7 @@ using Team.Application.Features.OpeningTimeSlot.Commands.DeleteOpeningTimeSlot;
 using Team.Application.Features.OpeningTimeSlot.Commands.UpdateOpeningTimeSlot;
 using Team.Application.Features.OpeningTimeSlot.Queries.GetOpeningTimeSlotDetails;
 using Team.Application.Features.OpeningTimeSlot.Queries.GetOpeningTimeSlots;
+using Team.Application.Features.OpeningTimeSlot.Queries.GetOpeningTimeSlotsByTeamAndDate;
 
 namespace Team.API.Controllers
 {
@@ -30,6 +31,13 @@ namespace Team.API.Controllers
         {
             var openingTimeSlot = await _mediator.Send(new GetOpeningTimeSlotsQuery());
             return Ok(openingTimeSlot);
+        }
+
+        [HttpGet("{teamId}/{date}")]
+        public async Task<ActionResult<IReadOnlyList<OpeningHoursDto>>> Get(Guid teamId, DateTime date)
+        {
+            var openingHours = await _mediator.Send(new GetOpeningTimeSlotsByTeamAndDateQuery(teamId, date));
+            return Ok(openingHours);
         }
 
         [HttpPost]

@@ -4,6 +4,7 @@ using Appointment.Application.Features.Appointment.Commands.DeleteAppointment;
 using Appointment.Application.Features.Appointment.Commands.UpdateAppointment;
 using Appointment.Application.Features.Appointment.Queries.GetAppointmentDetails;
 using Appointment.Application.Features.Appointment.Queries.GetAppointments;
+using Appointment.Application.Features.Appointment.Queries.GetAppointmentsByTeamAndDate;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
