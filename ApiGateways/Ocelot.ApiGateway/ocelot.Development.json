@@ -15,6 +15,18 @@
       "UpstreamHttpMethod": [ "GET", "DELETE" ]
     },
     {
+      "DownstreamPathTemplate": "/api/v1/OpeningTimeSlot/{teamId}/{date}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 9000
+        }
+      ],
+      "UpstreamPathTemplate": "/OpeningTimeSlot/{teamId}/{date}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
       "DownstreamPathTemplate": "/api/v1/OpeningTimeSlot",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [

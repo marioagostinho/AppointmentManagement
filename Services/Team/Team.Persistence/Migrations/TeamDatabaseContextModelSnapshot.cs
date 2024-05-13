@@ -54,7 +54,7 @@ namespace Team.Persistence.Migrations
 
                     b.HasIndex("OpeningTimeSlotId");
 
-                    b.ToTable("OpeningHoursTimeSlot");
+                    b.ToTable("OpeningHoursTimeSlots", (string)null);
                 });
 
             modelBuilder.Entity("Team.Domain.Entities.OpeningTimeSlot", b =>

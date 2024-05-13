@@ -14,7 +14,10 @@ namespace Appointment.Persistence.Repositories
         public async Task<IReadOnlyList<Entities.Appointment>> GetByTeamIdAndDateAsync(Guid teamId, DateTime date)
         {
             return await _context.Set<Entities.Appointment>()
-                .Where(p => p.TeamId == teamId && p.StartDateTime == date)
+                .Where(p => p.TeamId == teamId &&
+                    p.StartDateTime.Year == date.Year &&
+                    p.StartDateTime.Month == date.Month &&
+                    p.StartDateTime.Day == date.Day)
                 .AsNoTracking()
                 .ToListAsync();
         }

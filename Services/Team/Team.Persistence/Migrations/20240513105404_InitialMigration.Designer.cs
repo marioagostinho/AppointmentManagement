@@ -12,7 +12,7 @@ using Team.Persistence.DatabaseContext;
 namespace Team.Persistence.Migrations
 {
     [DbContext(typeof(TeamDatabaseContext))]
-    [Migration("20240509205711_InitialMigration")]
+    [Migration("20240513105404_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -57,7 +57,7 @@ namespace Team.Persistence.Migrations
 
                     b.HasIndex("OpeningTimeSlotId");
 
-                    b.ToTable("OpeningHoursTimeSlot");
+                    b.ToTable("OpeningHoursTimeSlots", (string)null);
                 });
 
             modelBuilder.Entity("Team.Domain.Entities.OpeningTimeSlot", b =>

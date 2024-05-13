@@ -57,7 +57,7 @@ namespace Team.Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "OpeningHoursTimeSlot",
+                name: "OpeningHoursTimeSlots",
                 columns: table => new
                 {
                     OpeningHoursId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -65,15 +65,15 @@ namespace Team.Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_OpeningHoursTimeSlot", x => new { x.OpeningHoursId, x.OpeningTimeSlotId });
+                    table.PrimaryKey("PK_OpeningHoursTimeSlots", x => new { x.OpeningHoursId, x.OpeningTimeSlotId });
                     table.ForeignKey(
-                        name: "FK_OpeningHoursTimeSlot_OpeningHours_OpeningHoursId",
+                        name: "FK_OpeningHoursTimeSlots_OpeningHours_OpeningHoursId",
                         column: x => x.OpeningHoursId,
                         principalTable: "OpeningHours",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_OpeningHoursTimeSlot_OpeningTimeSlots_OpeningTimeSlotId",
+                        name: "FK_OpeningHoursTimeSlots_OpeningTimeSlots_OpeningTimeSlotId",
                         column: x => x.OpeningTimeSlotId,
                         principalTable: "OpeningTimeSlots",
                         principalColumn: "Id",
@@ -105,8 +105,8 @@ namespace Team.Persistence.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_OpeningHoursTimeSlot_OpeningTimeSlotId",
-                table: "OpeningHoursTimeSlot",
+                name: "IX_OpeningHoursTimeSlots_OpeningTimeSlotId",
+                table: "OpeningHoursTimeSlots",
                 column: "OpeningTimeSlotId");
 
             migrationBuilder.CreateIndex(
@@ -119,7 +119,7 @@ namespace Team.Persistence.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "OpeningHoursTimeSlot");
+                name: "OpeningHoursTimeSlots");
 
             migrationBuilder.DropTable(
                 name: "TeamOpeningHours");

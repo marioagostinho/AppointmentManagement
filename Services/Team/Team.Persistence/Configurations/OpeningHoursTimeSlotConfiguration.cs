@@ -10,6 +10,9 @@ namespace Team.Persistence.Configurations
         public void Configure(EntityTypeBuilder<OpeningHoursTimeSlot> builder)
         {
             builder
+                .ToTable("OpeningHoursTimeSlots");
+
+            builder
                 .HasKey(to => new { to.OpeningHoursId, to.OpeningTimeSlotId });
 
             builder
