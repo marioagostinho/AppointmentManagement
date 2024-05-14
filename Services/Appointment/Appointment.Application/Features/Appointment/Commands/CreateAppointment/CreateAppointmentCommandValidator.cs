@@ -13,7 +13,8 @@ namespace Appointment.Application.Features.Appointment.Commands.CreateAppointmen
                 .NotNull();
 
             RuleFor(p => p.TeamId)
-                .NotNull();
+                .NotNull()
+                .NotEmpty();
         }
     }
 }

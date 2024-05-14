@@ -16,7 +16,7 @@ namespace Team.Application.Features.Team.Commands.UpdateTeam
 
             RuleFor(p => p.Id)
                 .NotNull()
-                .MustAsync(UpdateTeamMustExist).WithMessage("{PropertyName} must exist");
+                .MustAsync(TeamMustExist).WithMessage("{PropertyName} must exist");
 
             RuleFor(p => p.Name)
                 .NotEmpty().WithMessage("{PropertyName} is required")
@@ -34,7 +34,7 @@ namespace Team.Application.Features.Team.Commands.UpdateTeam
                 .MustAsync(AllOpeningHoursMustExist).WithMessage("{PropertyName} has invalid values");
         }
 
-        private async Task<bool> UpdateTeamMustExist(Guid id, CancellationToken cancellationToken)
+        private async Task<bool> TeamMustExist(Guid id, CancellationToken cancellationToken)
         {
             var team = await _teamRepository.GetByIdAsync(id);
 

@@ -15,7 +15,7 @@ namespace Team.Application.Features.OpeningHours.Commands.UpdateOpeningHours
 
             RuleFor(P => P.Id)
                 .NotNull()
-                .MustAsync(UpdateOpeningHoursMustExist).WithMessage("{PropertyName} must exist");
+                .MustAsync(OpeningHoursMustExist).WithMessage("{PropertyName} must exist");
 
             RuleFor(p => p.DayOfWeek)
                 .NotNull();
@@ -25,7 +25,7 @@ namespace Team.Application.Features.OpeningHours.Commands.UpdateOpeningHours
                 .MustAsync(AllOpeningTimeSlotMustExist).WithMessage("{PropertyName} has invalid values");
         }
 
-        private async Task<bool> UpdateOpeningHoursMustExist(Guid id, CancellationToken cancellationToken)
+        private async Task<bool> OpeningHoursMustExist(Guid id, CancellationToken cancellationToken)
         {
             var openingHours = await _openingHoursRepository.GetByIdAsync(id);
 

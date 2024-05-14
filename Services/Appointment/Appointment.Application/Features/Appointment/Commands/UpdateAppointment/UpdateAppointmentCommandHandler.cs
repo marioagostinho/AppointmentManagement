@@ -18,7 +18,7 @@ namespace Appointment.Application.Features.Appointment.Commands.UpdateAppointmen
 
         public async Task<bool> Handle(UpdateAppointmentCommand request, CancellationToken cancellationToken)
         {
-            var validator = new UpdateAppointmentCommandValidator();
+            var validator = new UpdateAppointmentCommandValidator(_appointmentRepository);
             var validatorResult = await validator.ValidateAsync(request, cancellationToken);
 
             if (validatorResult.Errors.Any())

@@ -13,7 +13,7 @@ namespace Team.Application.Features.OpeningTimeSlot.Commands.UpdateOpeningTimeSl
 
             RuleFor(P => P.Id)
                 .NotNull()
-                .MustAsync(UpdateOpeningTimeSlotMustExist).WithMessage("{PropertyName} must exist");
+                .MustAsync(OpeningTimeSlotMustExist).WithMessage("{PropertyName} must exist");
 
             RuleFor(p => p.StartHour)
                 .NotEmpty().WithMessage("{PropertyName} is required")
@@ -24,7 +24,7 @@ namespace Team.Application.Features.OpeningTimeSlot.Commands.UpdateOpeningTimeSl
                 .NotNull();
         }
 
-        private async Task<bool> UpdateOpeningTimeSlotMustExist(Guid id, CancellationToken cancellationToken)
+        private async Task<bool> OpeningTimeSlotMustExist(Guid id, CancellationToken cancellationToken)
         {
             var openingTimeSlot = await _openingTimeSlotRepository.GetByIdAsync(id);
 
