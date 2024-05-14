@@ -6,6 +6,7 @@
 
 <p align="center">
   <img src="https://github.com/marioagostinho/AppointmentManagement/blob/main/architecture.PNG" />
+  
 </p>
 
 <br />
