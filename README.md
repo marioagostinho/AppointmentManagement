@@ -10,24 +10,24 @@ This project was build with the goal of implementing a simples food inventory by
 
 ### Built With
 
-1. .NET 8.0
-2. Microservices:
-* MediatR
-* Entity Framework
-* SQL Server
-* AutoMapper
-* FluentValidation
-3. API Gateway:
-* Ocelot API
-4. Message Broker:
-* MassTransit
-* RabbitMQ
-5. Tests:
-* xUnit
-* Moq
-* Shouldly
-* Entity Framework InMemory
-6. Docker
+* .NET 8.0
+* Microservices:
+ - MediatR
+ - Entity Framework
+ - SQL Server
+ - AutoMapper
+ - FluentValidation
+* API Gateway:
+ - Ocelot API
+* Message Broker:
+ - MassTransit
+ - RabbitMQ
+* Tests:
+ - xUnit
+ - Moq
+ - Shouldly
+ - Entity Framework InMemory
+* Docker
 
 <br />
 
