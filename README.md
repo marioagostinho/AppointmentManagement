@@ -1,6 +1,12 @@
 [![LinkedIn][linkedin-shield]][linkedin-url] [![Trello][trello-icon]][trello-url]
 
-# Appointment Management 
+# Appointment Management
+
+<br />
+
+<p align="center">
+  <img src="https://github.com/marioagostinho/AppointmentManagement/blob/main/architecture.PNG" />
+</p>
 
 <br />
 
