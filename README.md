@@ -35,10 +35,9 @@ This project was build with the goal of implementing a simples food inventory by
 
 ### Prerequisites
 
-You will need to have the **.NET SDK 8** installed
-```sh
-winget install Microsoft.DotNet.SDK.8
- ```
+You will need to have installed:
+1. **.NET SDK 8**
+2. **Docker Desktop**
 
 ### Installation
 
