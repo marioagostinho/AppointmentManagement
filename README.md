@@ -5,7 +5,7 @@
 <br />
 
 <p align="center">
-  <img src="https://github.com/marioagostinho/AppointmentManagement/blob/main/architecture.PNG" />
+  <img src="https://github.com/marioagostinho/AppointmentManagement/blob/main/architecture.png" />
   
 </p>
 
