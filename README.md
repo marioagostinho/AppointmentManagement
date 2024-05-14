@@ -42,17 +42,17 @@ winget install Microsoft.DotNet.SDK.8
 
 ### Installation
 
-1. Clone the repository
-   ```sh
-   git clone https://github.com/marioagostinho/AppointmentManagement.git
-   ```
+Clone the repository
+ ```sh
+ git clone https://github.com/marioagostinho/AppointmentManagement.git
+ ```
 
 ### Starting
 
-1. From the cloned repository execute
-   ```sh
-   docker-compose up --build
-   ```
+From the cloned repository execute
+ ```sh
+ docker-compose up --build
+ ```
 
 <br />
 
