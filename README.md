@@ -72,4 +72,4 @@ and voilà the application is ready to be used :slightly_smiling_face:
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=0077b5
 [linkedin-url]: https://www.linkedin.com/in/mario-agostinho-5b364912b/
 [trello-icon]: https://img.shields.io/badge/-Trello-black.svg?style=for-the-badge&logo=trello&colorB=0052CC
-[trello-url]: https://trello.com/b/Y2SHQMln/inventory
+[trello-url]: https://trello.com/b/GzIMESyx/appointment-management
