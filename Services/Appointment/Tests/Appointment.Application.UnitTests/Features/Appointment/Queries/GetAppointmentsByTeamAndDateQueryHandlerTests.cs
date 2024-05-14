@@ -61,7 +61,7 @@ namespace Appointment.Application.UnitTests.Features.Appointment.Queries
             // Act
             var result = await handler.Handle(query, CancellationToken.None);
 
-            // Asserts
+            // Assert
             result.ShouldNotBeNull();
             result.ShouldBeOfType<List<AppointmentDto>>();
             result.Count.ShouldBe(3);
@@ -83,7 +83,7 @@ namespace Appointment.Application.UnitTests.Features.Appointment.Queries
             // Act
             var result = await handler.Handle(query, CancellationToken.None);
 
-            // Asserts
+            // Assert
             result.ShouldNotBeNull();
             result.ShouldBeOfType<List<AppointmentDto>>();
             result.Count.ShouldBe(0);
@@ -104,7 +104,7 @@ namespace Appointment.Application.UnitTests.Features.Appointment.Queries
             // Act
             var result = await handler.Handle(query, CancellationToken.None);
 
-            // Asserts
+            // Assert
             result.ShouldNotBeNull();
             result.ShouldBeOfType<List<AppointmentDto>>();
             result.Count.ShouldBe(0);

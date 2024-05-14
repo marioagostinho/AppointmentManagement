@@ -24,7 +24,7 @@ namespace Appointment.Application.UnitTests.Features.Appointment.Commands
             // Act
             var result = await handler.Handle(command, CancellationToken.None);
 
-            // Asserts
+            // Assert
             result.ShouldBeOfType<bool>();
             result.ShouldBeEquivalentTo(true);
         }

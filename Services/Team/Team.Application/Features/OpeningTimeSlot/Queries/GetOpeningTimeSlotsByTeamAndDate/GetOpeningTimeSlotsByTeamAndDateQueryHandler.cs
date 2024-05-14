@@ -29,33 +29,34 @@ namespace Team.Application.Features.OpeningTimeSlot.Queries.GetOpeningTimeSlotsB
         public async Task<IReadOnlyList<OpeningTimeSlotDto>> Handle(GetOpeningTimeSlotsByTeamAndDateQuery request, CancellationToken cancellationToken)
         {
             var validator = new GetOpeningTimeSlotsByTeamAndDateQueryValidator(_teamRepository);
-            var validationTask = validator.ValidateAsync(request, cancellationToken);
+            var validatorResult = await validator.ValidateAsync(request, cancellationToken);
 
-            // Send AppointmentRequestEvent while simultaneously with validation
-            var messageResponseTask = _requestClient.GetResponse<AppointmentResponseBatchEvent>(new AppointmentRequestEvent
+            if (validatorResult.Errors.Any())
+                throw new Exception();
+
+            // AppointmentResponseBatchEvent
+            var messageResponse = await _requestClient.GetResponse<AppointmentResponseBatchEvent>(new AppointmentRequestEvent
             {
                 TeamId = request.TeamId,
                 Date = request.Date
             });
 
-            // Await validation to complete
-            var validatorResult = await validationTask;
+            // Aggroup by appointment start date and minute
+            var appointmentCounts = messageResponse.Message.Appointments
+                .GroupBy(p => new TimeSpan(p.StartDateTime.Hour, p.StartDateTime.Minute, 0))
+                .ToDictionary(g => g.Key, g => g.Count());
 
-            if (validatorResult.Errors.Any())
-                throw new Exception();
-
-            // Await the message response for appointments
-            var messageResponse = await messageResponseTask;
-            var appointmentsDates = new HashSet<TimeSpan>(
-                messageResponse.Message.Appointments.Select(p => new TimeSpan(p.StartDateTime.Hour, p.StartDateTime.Minute, 0)));
-
-            // Get OpeningTimeSlots by team id and day of the weak
+            // Get OpeningTimeSlots by team id and day of the week
             EDayOfWeek dayOfWeek = (EDayOfWeek)request.Date.DayOfWeek;
             var openingTimeSlots = await _openingTimeSlotRepository.GetByTeamIdAndDayAsync(request.TeamId, dayOfWeek);
 
-            // Filter out times that conflict with appointments
+            // Team's amount of apointments
+            var team = await _teamRepository.GetByIdAsync(request.TeamId);
+            var amountOfAppointments = team.AmountOfAppointments;
+
+            // Filter out times that have the exact number of appointments matching the team's amountOfAppointments
             var filteredOpeningTimeSlots = openingTimeSlots
-                .Where(ots => !appointmentsDates.Contains(ots.StartHour))
+                .Where(ots => !appointmentCounts.TryGetValue(ots.StartHour, out int count) || count != amountOfAppointments)
                 .ToList();
 
             var result = _mapper.Map<IReadOnlyList<OpeningTimeSlotDto>>(filteredOpeningTimeSlots);
