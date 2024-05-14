@@ -18,18 +18,18 @@ This project was build with the goal of design and develop an application that f
 ### Built With
 
 * .NET 8.0
-* Microservices:
+* **Microservices:**
   - MediatR
   - Entity Framework
   - SQL Server
   - AutoMapper
   - FluentValidation
-* API Gateway:
+* **API Gateway:**
   - Ocelot API
-* Message Broker:
+* **Message Broker:**
   - MassTransit
   - RabbitMQ
-* Tests:
+* **Tests:**
   - xUnit
   - Moq
   - Shouldly
