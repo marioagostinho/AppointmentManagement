@@ -71,6 +71,8 @@ and voilà the application is ready to be used :slightly_smiling_face:
 - [ ] Add more testing
 - [ ] Add exception treatment
 - [ ] Add async validation when creating/ editing appointments
+- [ ] Identity service
+- [ ] Email service
 - [ ] Add client
 
 
