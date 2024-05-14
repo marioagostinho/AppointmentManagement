@@ -1,8 +1,4 @@
 ﻿using Appointment.Application.Features.Appointment.Commands.DeleteAppointment;
-using Appointment.Application.UnitTests.Mocks;
-using Appointment.Domain.Repositories;
-using Moq;
-using Shouldly;
 
 namespace Appointment.Application.UnitTests.Features.Appointment.Commands
 {

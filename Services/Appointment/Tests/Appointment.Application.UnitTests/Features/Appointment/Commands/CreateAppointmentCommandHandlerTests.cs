@@ -1,10 +1,4 @@
 ﻿using Appointment.Application.Features.Appointment.Commands.CreateAppointment;
-using Appointment.Application.MappingProfiles;
-using Appointment.Application.UnitTests.Mocks;
-using Appointment.Domain.Repositories;
-using AutoMapper;
-using Moq;
-using Shouldly;
 
 namespace Appointment.Application.UnitTests.Features.Appointment.Commands
 {

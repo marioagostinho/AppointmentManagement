@@ -1,8 +1,4 @@
-﻿using Entities = Appointment.Domain.Entities;
-using Appointment.Domain.Repositories;
-using Moq;
-
-namespace Appointment.Application.UnitTests.Mocks
+﻿namespace Appointment.Application.UnitTests.Mocks
 {
     public class MockAppointmentRepository
     {

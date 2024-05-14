@@ -1,11 +1,4 @@
-﻿using Appointment.Application.Dtos;
-using Appointment.Application.Features.Appointment.Queries.GetAppointmentDetails;
-using Appointment.Application.MappingProfiles;
-using Appointment.Application.UnitTests.Mocks;
-using Appointment.Domain.Repositories;
-using AutoMapper;
-using Moq;
-using Shouldly;
+﻿using Appointment.Application.Features.Appointment.Queries.GetAppointmentDetails;
 
 namespace Appointment.Application.UnitTests.Features.Appointment.Queries
 {

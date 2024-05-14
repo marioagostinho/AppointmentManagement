@@ -7,7 +7,10 @@ namespace Appointment.Persistence.DatabaseContext
     {
         public AppointmentDatabaseContext(DbContextOptions<AppointmentDatabaseContext> options) : base(options)
         {
-            Database.Migrate();
+            if (Database.IsRelational())
+            {
+                Database.Migrate();
+            }
         }
 
         public DbSet<Entities.Appointment> Appointments { get; set; }

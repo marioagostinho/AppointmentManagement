@@ -1,12 +1,4 @@
-﻿using Appointment.Application.MappingProfiles;
-using Appointment.Application.UnitTests.Mocks;
-using Appointment.Domain.Repositories;
-using AutoMapper;
-using Moq;
-using Appointment.Application.Features.Appointment.Queries.GetAppointmentsByTeamAndDate;
-using Appointment.Application.Dtos;
-using Shouldly;
-using static MassTransit.ValidationResultExtensions;
+﻿using Appointment.Application.Features.Appointment.Queries.GetAppointmentsByTeamAndDate;
 
 namespace Appointment.Application.UnitTests.Features.Appointment.Queries
 {
