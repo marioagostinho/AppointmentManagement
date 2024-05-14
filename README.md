@@ -11,7 +11,7 @@
 
 <br />
 
-This project was build with the goal of implementing a simples food inventory by batches.
+This project was build with the goal of design and develop an application that facilitates the management and booking of appointments for support teams.
 
 <br />
 
